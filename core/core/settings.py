@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # local apps
-    "xss.apps.XssConfig",
+    "core",
 ]
 
 MIDDLEWARE = [
