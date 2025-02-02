@@ -22,5 +22,6 @@ from .views import view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('xss/', view, name='xss')
+    path('xss/', view, name='xss'),
+    path('sqlinjection/', view, name='sqlinjection'),
 ]
