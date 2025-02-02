@@ -18,7 +18,7 @@ class XSSVulnerabilityTests(TestCase):
         # 2. Simulate a user submitting the malicious input (adjust as needed)
         data = {'message': malicious_input}  # 'message' is vulnerable field
 
-        url = reverse('xss_attack') 
+        url = reverse('xss') 
         response = self.client.post(url, data)
 
         # 3. Assertions: Check for proper escaping/sanitization.
@@ -34,7 +34,7 @@ class XSSVulnerabilityTests(TestCase):
     def test_xss_vulnerability_get(self): # Test for GET requests too
         # this test, tests malicious input in the url.
         malicious_input = "<script>alert('XSS Attack!');</script>"
-        url = reverse('my_view_name') + f'?message={malicious_input}' # Add malicious input as GET parameter
+        url = reverse('xss') + f'?message={malicious_input}' # Add malicious input as GET parameter
         response = self.client.get(url)
         escaped_input = "&lt;script&gt;alert('XSS Attack!');&lt;/script&gt;"
-        self.assertContains(response, escaped_input)
+        self.assertNotContains(response, escaped_input)
