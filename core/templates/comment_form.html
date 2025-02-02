@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Comment Form</title>
+</head>
+<body>
+    <form method="POST" action=>{% csrf_token %}
+        <label for="message">Comment: </label>
+        <input id="message" type="text" name="message">
+        <button type="submit">Submit</button>
+    </form>    
+</body>
+</html>
