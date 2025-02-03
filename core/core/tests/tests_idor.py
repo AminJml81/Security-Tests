@@ -1,6 +1,5 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from django.contrib.auth.models import User  # If you have user authentication
 from django.contrib.auth import get_user_model
 
 from core.models import Comment
