@@ -1,0 +1,33 @@
+<h1>Comment Details</h1>
+
+{% if comment %}  <div class="comment">
+        <p class="message"><strong>Message:</strong> {{ comment.message }}</p>
+        <p class="user"><strong>User:</strong> {{ comment.user.username }}</p>  <p class="created-at"><strong>Created At:</strong> {{ comment.created_at }}</p>
+        </div>
+{% endif %}
+
+
+<style>
+    .comment {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+    .message {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .user {
+        color: #777;
+        margin-bottom: 5px;
+    }
+
+    .created-at {
+        color: #999;
+        font-size: 0.9em;
+    }
+    /* Add more styles as needed */
+</style>

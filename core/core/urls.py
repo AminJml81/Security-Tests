@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LogoutView
-from .views import view, homeview, CustomLoginView, protected
+from .views import view, homeview, CustomLoginView, protected, CommentDetail ,commentadd
 
 
 urlpatterns = [
@@ -26,6 +26,8 @@ urlpatterns = [
     path('sqlinjection/', view, name='sqlinjection'),
     path('login/', CustomLoginView.as_view(),  name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('comments/add/', commentadd, name='comment-add'),
+    path('comments/<int:pk>/', CommentDetail.as_view(), name='comment-detail'),
     path('protected/', protected,  name='protected'),
     path('', homeview, name='index'),
 ]
