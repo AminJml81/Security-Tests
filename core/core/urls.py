@@ -16,12 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from .views import view
+from django.contrib.auth.views import LogoutView
+from .views import view, homeview, CustomLoginView, protected
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('xss/', view, name='xss'),
     path('sqlinjection/', view, name='sqlinjection'),
+    path('login/', CustomLoginView.as_view(),  name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('protected/', protected,  name='protected'),
+    path('', homeview, name='index'),
 ]
